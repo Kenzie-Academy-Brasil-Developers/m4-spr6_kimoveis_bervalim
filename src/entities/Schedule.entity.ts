@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import User from "./User.entity";
+import RealEstate from "./RealEstate.entity";
 
 @Entity("schedules")
 export default class Schedule {
@@ -10,4 +12,10 @@ export default class Schedule {
 
   @Column({ type: "time" })
   hour: string;
+
+  @ManyToOne(() => User, (user) => user.schedules)
+  user: User;
+
+  @ManyToOne(() => RealEstate, (realState) => realState.schedules)
+  realEstate: RealEstate;
 }

@@ -3,9 +3,11 @@ import {
   CreateDateColumn,
   DeleteDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
+import Schedule from "./Schedule.entity";
 
 @Entity("users")
 export default class User {
@@ -32,4 +34,7 @@ export default class User {
 
   @DeleteDateColumn({ type: "date", nullable: true })
   deletedAt: string;
+
+  @OneToMany(() => Schedule, (schedule) => schedule.user)
+  schedules: Schedule[];
 }
