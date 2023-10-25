@@ -1,8 +1,12 @@
-import 'reflect-metadata';
-import 'express-async-errors';
-import express from 'express';
+import "reflect-metadata";
+import "express-async-errors";
+import express, { Application } from "express";
+import { handleErrors } from "./middlewares/handleErrors.middlewares";
 
-const app = express();
+const app: Application = express();
+
 app.use(express.json());
+
+app.use(handleErrors);
 
 export default app;
