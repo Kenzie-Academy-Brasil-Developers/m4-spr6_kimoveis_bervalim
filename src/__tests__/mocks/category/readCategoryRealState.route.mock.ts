@@ -1,6 +1,8 @@
-import { Repository } from 'typeorm';
-import { AppDataSource } from '../../../data-source';
-import { Address, Category, RealEstate } from '../../../entities';
+import { Repository } from "typeorm";
+import { AppDataSource } from "../../../data-source";
+import Address from "../../../entities/Address.entity";
+import Category from "../../../entities/Category.entity";
+import RealEstate from "../../../entities/RealEstate.entity";
 
 type iCategoryRepo = Repository<Category>;
 type iRealEstateRepo = Repository<RealEstate>;
@@ -8,7 +10,7 @@ type iAddressRepo = Repository<Address>;
 
 const categoryRealStation = async (): Promise<any> => {
   const categoryRepo: iCategoryRepo = AppDataSource.getRepository(Category);
-  const category = await categoryRepo.save({ name: 'Studio' });
+  const category = await categoryRepo.save({ name: "Studio" });
 
   const realEstateRepo: iRealEstateRepo =
     AppDataSource.getRepository(RealEstate);
@@ -40,7 +42,7 @@ const categoryRealStation = async (): Promise<any> => {
   }
 
   await realEstateRepo
-    .createQueryBuilder('rs')
+    .createQueryBuilder("rs")
     .insert()
     .values(manyRealEstate)
     .execute();

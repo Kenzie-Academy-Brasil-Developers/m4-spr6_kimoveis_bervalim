@@ -1,6 +1,7 @@
-import { DeepPartial, Repository } from 'typeorm';
-import { AppDataSource } from '../../../data-source';
-import { Address, RealEstate } from '../../../entities';
+import { DeepPartial, Repository } from "typeorm";
+import { AppDataSource } from "../../../data-source";
+import Address from "../../../entities/Address.entity";
+import RealEstate from "../../../entities/RealEstate.entity";
 
 type iRealEstateRepo = Repository<RealEstate>;
 type iAddressRepo = Repository<Address>;
@@ -35,7 +36,7 @@ const manyRealStations = async (
   }
 
   await realEstateRepo
-    .createQueryBuilder('rs')
+    .createQueryBuilder("rs")
     .insert()
     .values(manyRealEstate)
     .execute();
