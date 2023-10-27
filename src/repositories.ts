@@ -7,13 +7,13 @@ import RealEstate from "./entities/RealEstate.entity";
 import Schedule from "./entities/Schedule.entity";
 import { TuserRepo } from "./interfaces/users.interface";
 import { TcategoryRepo } from "./interfaces/category.interfaces";
+import { TadressRepo, TrealStateRepo } from "./interfaces/realState.interface";
 
 export const userRepo: TuserRepo = AppDataSource.getRepository(User);
 export const categoryRepo: TcategoryRepo =
   AppDataSource.getRepository(Category);
-export const adressRepo: Repository<Address> =
-  AppDataSource.getRepository(Address);
-export const realStateRepo: Repository<RealEstate> =
+export const adressRepo: TadressRepo = AppDataSource.getRepository(Address);
+export const realStateRepo: TrealStateRepo =
   AppDataSource.getRepository(RealEstate);
 export const scheduleRepo: Repository<Schedule> =
   AppDataSource.getRepository(Schedule);
