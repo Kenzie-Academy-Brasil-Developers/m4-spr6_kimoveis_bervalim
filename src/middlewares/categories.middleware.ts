@@ -24,7 +24,7 @@ export const verifyIfCategoryExists = async (
   res: Response,
   next: NextFunction
 ): Promise<void> => {
-  const { id } = req.body;
+  const { id } = req.params;
   const category: Category | null = await categoryRepo.findOneBy({
     id: Number(id),
   });
