@@ -1,7 +1,7 @@
 import "reflect-metadata";
 import "express-async-errors";
 import express, { Application } from "express";
-import { handleErrors } from "./middlewares/handleErrors.middlewares";
+import { handleErrors } from "./middlewares/handleErrors.middleware";
 
 const app: Application = express();
 
