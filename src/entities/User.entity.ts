@@ -1,4 +1,6 @@
 import {
+  BeforeInsert,
+  BeforeUpdate,
   Column,
   CreateDateColumn,
   DeleteDateColumn,
@@ -8,6 +10,7 @@ import {
   UpdateDateColumn,
 } from "typeorm";
 import Schedule from "./Schedule.entity";
+import { getRounds, hashSync } from "bcryptjs";
 
 @Entity("users")
 export default class User {
@@ -37,4 +40,17 @@ export default class User {
 
   @OneToMany(() => Schedule, (schedule) => schedule.user)
   schedules: Schedule[];
+
+  @BeforeInsert()
+  @BeforeUpdate()
+  hashPassword() {
+    // Verifica se a senha está criptgrafada
+    const hasRounds: number = getRounds(this.password);
+    // Se não tiver, criptograda, irá criptograr a senha na entidade
+    // de user andes da criação e da edição
+    // Por isso criamos o create no service, para chamarmos os listeners
+    if (!hasRounds) {
+      this.password = hashSync(this.password, 10);
+    }
+  }
 }
