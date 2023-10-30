@@ -16,6 +16,7 @@ import {
 } from "../controllers/categories.controller";
 
 export const categoryRouter: Router = Router();
+
 categoryRouter.post(
   "/",
   validateBody(createCategoryRequestSchema),

@@ -21,6 +21,7 @@ import {
 } from "../controllers/users.controller";
 
 export const userRouter: Router = Router();
+
 userRouter.post(
   "/",
   validateBody(createUserRequestSchema),

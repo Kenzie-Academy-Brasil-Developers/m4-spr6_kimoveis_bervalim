@@ -9,6 +9,6 @@ export default class Category {
   @Column({ length: 45, unique: true })
   name: string;
 
-  @OneToMany(() => RealEstate, (realState) => realState.category)
-  RealEstate: RealEstate[];
+  @OneToMany(() => RealEstate, (realEstate) => realEstate.category)
+  realEstate: RealEstate[];
 }

@@ -26,7 +26,7 @@ export const readRealStateByCategoryService = async (
       id: id,
     },
     relations: {
-      RealEstate: true,
+      realEstate: true,
     },
   });
 
