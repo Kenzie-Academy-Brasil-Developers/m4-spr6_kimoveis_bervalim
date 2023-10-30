@@ -1,7 +1,6 @@
 import Category from "../entities/Category.entity";
 import AppError from "../errors/AppError.errors";
 import {
-  TcategoryRepo,
   TcreateCategoryRequest,
   TreadAllCategories,
 } from "../interfaces/category.interfaces";

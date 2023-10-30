@@ -8,7 +8,6 @@ import {
 import { userRepo } from "../repositories";
 import {
   createUserResponseSchema,
-  updateUserNoAdminSchema,
   usersListResponseSchema,
 } from "../schemas/users.schema";
 
