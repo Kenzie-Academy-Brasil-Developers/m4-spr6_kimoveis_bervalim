@@ -40,6 +40,6 @@ export default class RealEstate {
   @JoinColumn()
   address: Address;
 
-  @ManyToOne(() => Category, (category) => category.realStates)
+  @ManyToOne(() => Category, (category) => category.RealEstate)
   category: Category;
 }

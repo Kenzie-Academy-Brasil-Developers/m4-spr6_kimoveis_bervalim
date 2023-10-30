@@ -10,5 +10,5 @@ export default class Category {
   name: string;
 
   @OneToMany(() => RealEstate, (realState) => realState.category)
-  realStates: RealEstate[];
+  RealEstate: RealEstate[];
 }

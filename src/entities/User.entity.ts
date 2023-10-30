@@ -44,11 +44,7 @@ export default class User {
   @BeforeInsert()
   @BeforeUpdate()
   hashPassword() {
-    // Verifica se a senha está criptgrafada
     const hasRounds: number = getRounds(this.password);
-    // Se não tiver, criptograda, irá criptograr a senha na entidade
-    // de user andes da criação e da edição
-    // Por isso criamos o create no service, para chamarmos os listeners
     if (!hasRounds) {
       this.password = hashSync(this.password, 10);
     }
