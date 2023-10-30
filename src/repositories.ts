@@ -7,7 +7,7 @@ import Schedule from "./entities/Schedule.entity";
 import { TuserRepo } from "./interfaces/users.interface";
 import { TcategoryRepo } from "./interfaces/category.interfaces";
 import { TadressRepo, TrealStateRepo } from "./interfaces/realState.interface";
-import { TscheduleRepo } from "./interfaces/schemas.interface";
+import { TscheduleRepo } from "./interfaces/schedules.interface";
 
 export const userRepo: TuserRepo = AppDataSource.getRepository(User);
 export const categoryRepo: TcategoryRepo =

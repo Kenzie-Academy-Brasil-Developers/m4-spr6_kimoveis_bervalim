@@ -3,9 +3,11 @@ import { userRouter } from "./user.router";
 import { sessionRouter } from "./session.router";
 import { categoryRouter } from "./category.router";
 import { realEstateRouter } from "./realEstate.router";
+import { schedulesRouter } from "./schedules.router";
 
 export const allRoutes: Router = Router();
 allRoutes.use("/users", userRouter);
 allRoutes.use("/login", sessionRouter);
 allRoutes.use("/categories", categoryRouter);
 allRoutes.use("/realEstate", realEstateRouter);
+allRoutes.use("/schedules", schedulesRouter);
